@@ -3,7 +3,17 @@
 @section('content')
     <div>
         <div class="">
+
+            @if (session()->get('success'))
+                <div class="alert alert-success">
+                    {{ session()->get('success') }}
+                </div>
+            @endif
+
             <h1 class="">Contacts</h1>
+            <div>
+                <a style="margin: 19px;" href="{{ route('contacts.create') }}" class="btn btn-primary">New contact</a>
+            </div>
             <table class="table table-striped">
                 <thead>
                     <tr>
